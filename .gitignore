@@ -103,23 +103,21 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# ---------------------------
 
-# Stefano's gitignore
+# Forti's gitignore
 *.un~
 bin
 include
 docs/build
 
-# IntelliJ IDEA and PyCharm
+# IDEs (IntelliJ IDEA/PyCharm & VSCode)
 .idea
 *.iml
-
-# VSCode
 .vscode
 
-# IntelliJ IDEA and PyCharm
-.idea
-*.iml
-
 # ENVIRONMENTS VARIABLES
-.variable.sh
+variables.sh
+
+# MIX
+celerybeat-schedule.db
