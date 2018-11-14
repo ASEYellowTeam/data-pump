@@ -104,9 +104,22 @@ venv.bak/
 .mypy_cache/
 
 
+# Stefano's gitignore
+*.un~
+bin
+include
+docs/build
+
 # IntelliJ IDEA and PyCharm
 .idea
 *.iml
 
 # VSCode
 .vscode
+
+# IntelliJ IDEA and PyCharm
+.idea
+*.iml
+
+# ENVIRONMENTS VARIABLES
+.variable.sh
