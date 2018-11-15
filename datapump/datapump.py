@@ -6,7 +6,7 @@ from celery import Celery
 from celery.task import periodic_task
 
 
-BACKEND = BROKER = 'redis://localhost:6379'
+BACKEND = BROKER = os.getenv('BROKER', 'redis://localhost:6379')
 celery = Celery(__name__, backend=BACKEND, broker=BROKER)
 
 DATASERVICE=os.environ['DATA_SERVICE']
