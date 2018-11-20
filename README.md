@@ -12,7 +12,7 @@ _Get data from Strava_
 
 Export the variables you have obtained by registering your application.
 
-Export also the address and the port of the [data-service](https://github.com/ASEYellowTeam/data-service) microservice,
+Export also the address and the port of the [data-service](https://github.com/ytbeepbeep/data-service) microservice,
 the default is `127.0.0.1:5002`.
 
 A smart way to do this is to create a file `variables.sh` in the project root, as follows.
@@ -31,7 +31,7 @@ You can load the variables with `source variables.sh`.
 pip install -r requirements.txt
 ```
 
-#### 4. Install [Redis](https://redis.io/download#installation)
+#### 3. Install [Redis](https://redis.io/download#installation)
 In a folder of your choice (outside this repository):
 ```
 wget http://download.redis.io/releases/redis-5.0.0.tar.gz
