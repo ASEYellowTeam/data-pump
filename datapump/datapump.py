@@ -4,6 +4,7 @@ import os
 from datetime import timedelta
 from celery import Celery
 from celery.task import periodic_task
+import json
 
 
 BACKEND = BROKER = os.getenv('BROKER', 'redis://localhost:6379')
@@ -13,11 +14,15 @@ DATASERVICE=os.environ['DATA_SERVICE']
 
 
 def fetch_all_runs():
-    users = requests.get(DATASERVICE + '/users').json()['users']
+    users = requests.get(DATASERVICE + '/users')
+    users = users.json()
     runs_fetched = {}
-
     for user in users:
-        strava_token = user.get('strava_token')
+        strava_token = None
+
+        if 'strava_token' in user:
+            strava_token = user['strava_token']
+
         email = user['email']
 
         if strava_token is None:
@@ -26,6 +31,7 @@ def fetch_all_runs():
         print('Fetching Strava for %s' % email)
         runs_fetched[user['id']] = fetch_runs(user)
 
+    print(runs_fetched)
     return runs_fetched
 
 
@@ -59,7 +65,8 @@ def fetch_runs(user):
         runs.append(activity2run(activity))
     return runs
 
-@periodic_task(run_every=timedelta(seconds=300))
+
+@periodic_task(run_every=timedelta(seconds=3))
 def periodic_fetch():
     push_to_dataservice(fetch_all_runs())
 
