@@ -31,7 +31,6 @@ def fetch_all_runs():
         print('Fetching Strava for %s' % email)
         runs_fetched[user['id']] = fetch_runs(user)
 
-    print(runs_fetched)
     return runs_fetched
 
 
@@ -67,7 +66,7 @@ def fetch_runs(user):
 
 
 @periodic_task(run_every=timedelta(seconds=3))
-def periodic_fetch():
+def periodic_fetch():  # pragma no cover
     push_to_dataservice(fetch_all_runs())
 
 

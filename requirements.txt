@@ -2,3 +2,6 @@ stravalib
 requests
 celery
 redis
+requests-mock
+flask
+flask-sqlalchemy
