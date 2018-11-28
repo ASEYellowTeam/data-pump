@@ -36,7 +36,7 @@ def fetch_all_runs():
 
 
 def push_to_dataservice(runs):
-    requests.post(DATASERVICE + '/add_runs', json=runs)
+    requests.post(DATASERVICE + '/runs', json=runs)
 
 
 def activity2run(activity):
