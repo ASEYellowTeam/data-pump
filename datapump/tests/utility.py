@@ -17,14 +17,16 @@ class User(db.Model):
     rest_hr = db.Column(db.Integer)
     vo2max = db.Column(db.Numeric(4, 2))
 
-    def to_json(self):
+    def to_json(self, secure=True):
         res = {}
         for attr in ('id', 'email', 'firstname', 'lastname', 'age', 'weight',
-                     'max_hr', 'rest_hr', 'vo2max', 'strava_token'):
+                     'max_hr', 'rest_hr', 'vo2max'):
             value = getattr(self, attr)
             if isinstance(value, Decimal):
                 value = float(value)
             res[attr] = value
+        if secure is True:
+            res['strava_token'] = self.strava_token
         return res
 
 

@@ -10,7 +10,7 @@ import json
 BACKEND = BROKER = os.getenv('BROKER', 'redis://localhost:6379')
 celery = Celery(__name__, backend=BACKEND, broker=BROKER)
 
-DATASERVICE=os.environ['DATA_SERVICE']
+DATASERVICE = os.environ['DATA_SERVICE']
 
 
 def fetch_all_runs():
@@ -34,7 +34,7 @@ def fetch_all_runs():
     return runs_fetched
 
 
-def push_to_dataservice(runs):
+def push_to_dataservice(runs):  # pragma: no cover
     requests.post(DATASERVICE + '/runs', json=runs)
 
 
