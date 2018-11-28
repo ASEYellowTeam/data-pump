@@ -1,8 +1,8 @@
 # data-pump
 _Get data from Strava_
 
-[![Build Status](https://travis-ci.org/ytbeepbeep/data-pump.svg?branch=master)](https://travis-ci.org/ASEYellowTeam/data-pump)
-[![Coverage Status](https://coveralls.io/repos/github/ytbeepbeep/data-pump/badge.svg?branch=master)](https://coveralls.io/github/ASEYellowTeam/data-pump?branch=master)
+[![Build Status](https://travis-ci.org/ytbeepbeep/data-pump.svg?branch=master)](https://travis-ci.org/ytbeepbeep/data-pump)
+[![Coverage Status](https://coveralls.io/repos/github/ytbeepbeep/data-pump/badge.svg?branch=master)](https://coveralls.io/github/ytbeepbeep/data-pump?branch=master)
 
 ## First setup
 
