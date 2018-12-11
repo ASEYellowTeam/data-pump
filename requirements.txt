@@ -1,7 +1,7 @@
 stravalib
 requests
 celery
-redis
+redis==2.10.6
 requests-mock
 flask
 flask-sqlalchemy
